@@ -1,0 +1,461 @@
+/* =======================================
+   1. Общие стили (General & Utility)
+   ======================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { 
+  height: 100%; 
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+  color: #eaf0ff; 
+  /* Фон из header.css */
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(45,24,80,0.12), transparent 8%), 
+              linear-gradient(135deg, #061226 0%, #0f1b33 30%, #162d68 100%); 
+  min-height: 100vh; 
+  line-height:1.3;
+  scroll-behavior: smooth;
+}
+
+.wrap { 
+  max-width:1200px; 
+  margin:0 auto; 
+  padding:50px: /* Базовый отступ */
+  width:100%; 
+}
+
+/* Общие стили для кнопок (CTAs) */
+.btn {
+  padding: 14px 28px; 
+  border-radius:14px; 
+  text-decoration:none; 
+  display:inline-flex; 
+  align-items:center; 
+  justify-content:center;
+  font-weight:700; 
+  font-size:16px; 
+  transition: transform .18s ease, box-shadow .18s ease, opacity .12s ease;
+  box-shadow: 0 10px 30px rgba(6,12,32,0.45);
+}
+.btn.primary {
+  background: linear-gradient(135deg,#4f47ff,#2f6bf0);
+  color: #fff;
+}
+.btn.ghost {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  color: #eaf0ff;
+  backdrop-filter: blur(6px);
+}
+.btn:hover { 
+  transform: translateY(-3px); 
+  /* Добавлено для ghost, чтобы выглядело лучше */
+  box-shadow: 0 14px 40px rgba(6,12,32,0.6); 
+}
+
+/* =======================================
+   2. HERO Секция
+   ======================================= */
+.hero { 
+  position:relative; 
+  padding: 40px 0 120px 0; 
+  min-height: 520px; 
+  display:flex; 
+  align-items:center; 
+}
+.hero-inner { 
+  display:flex; 
+  gap:48px; 
+  align-items:center; 
+  justify-content:space-between; 
+}
+
+/* left column */
+.hero-left { 
+  flex:1; 
+  max-width:680px; 
+  color:#eaf0ff; 
+}
+.kicker {
+  display:inline-block; 
+  font-size:13px; 
+  font-weight:600; 
+  letter-spacing:2px; 
+  color: rgba(235,243,255,0.85);
+  margin-bottom:18px; 
+  opacity:0.95;
+}
+
+/* big title */
+.hero-title {
+  font-size: clamp(36px, 5vw, 80px);
+  line-height: 0.98;
+  font-weight: 900;
+  margin: 6px 0 22px;
+  background: linear-gradient(90deg,#caa6ff 0%, #8bb6ff 100%);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 14px 50px rgba(8,14,40,0.35);
+  letter-spacing: -1px;
+}
+
+/* lead */
+.hero-lead {
+  font-size:19px; 
+  color: rgba(230,240,255,0.8); 
+  max-width:56ch; 
+  margin-bottom:28px;
+  opacity:0.9;
+}
+
+/* CTAs */
+.hero-ctas { 
+  display:flex; 
+  gap:18px; 
+  align-items:center; 
+}
+
+
+/* right column - glass card */
+.hero-right { 
+  flex:0 0 460px; 
+  display:flex; 
+  justify-content:center; 
+  align-items:center; 
+  position:relative; 
+}
+.hero-card {
+  width:440px; 
+  height:607px; 
+  border-radius:18px; 
+  position:relative; 
+  overflow:hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 28px 70px rgba(6,12,30,0.6);
+  transform: translateY(0); 
+  transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .25s ease;
+}
+.hero-card:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 40px 110px rgba(6,12,30,0.7); 
+}
+
+.hero-card-inner { 
+  width:100%; 
+  height:100%; 
+  padding:18px; 
+  display:flex; 
+  flex-direction:column; 
+  gap:14px; 
+}
+.pill {
+  display:inline-block; 
+  padding:8px 12px; 
+  border-radius:999px; 
+  font-weight:700; 
+  font-size:13px;
+  background: linear-gradient(90deg, rgba(140,94,255,0.14), rgba(59,130,246,0.08));
+  color:#eaf0ff; 
+  align-self:flex-start;
+}
+.hero-img {
+  width:100%; 
+  height:100%; 
+  object-fit:cover; 
+  border-radius:12px; 
+  display:block;
+  box-shadow: inset 0 -8px 30px rgba(2,8,23,0.65);
+}
+
+/* overlay meta */
+.card-overlay { 
+  position:absolute; 
+  left:25px; 
+  bottom:25px; 
+  color: rgba(230,240,255,0.95); 
+  font-size:14px; 
+  opacity: .6;
+}
+
+/* decorative blurred shapes */
+.hero-decor {
+  position:absolute; 
+  right:-90px; 
+  top:20px; 
+  width:60%; 
+  height:360px; 
+  pointer-events:none; 
+  filter: blur(16px); 
+  opacity:0.95;
+}
+
+/* small entrance animation */
+.hero-title, .hero-lead, .hero-ctas { transform: translateY(8px); opacity:0; animation: heroIn .6s forwards; }
+.hero-title { animation-delay:.06s; } 
+.hero-lead { animation-delay:.16s; } 
+.hero-ctas { animation-delay:.28s; }
+@keyframes heroIn { to { transform: translateY(0); opacity:1; } }
+
+
+/* =======================================
+   3. FEATURES Секция
+   ======================================= */
+.features-grid {
+  padding: 80px 0 100px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header */
+.grid-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+.grid-title {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 800;
+  margin: 8px 0 16px;
+  color: #eaf0ff;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+.grid-lead {
+  font-size: 18px;
+  color: rgba(230, 240, 255, 0.75);
+}
+
+/* Cards Container */
+.features-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Individual Card */
+.feature-card {
+  padding: 30px 25px;
+  border-radius: 18px;
+  min-height: 240px;
+  /* Glassmorphism Background */
+  background-color:#102450;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 15px 35px rgba(6, 12, 30, 0.35);
+  transition: transform .3s ease, box-shadow .3s ease;
+  position: relative;
+}
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.15), 0 12px 35px rgba(6, 12, 30, 0.5);
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.card-heading {
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.card-text {
+  font-size: 15px;
+  color: rgba(205, 217, 255, 0.7);
+}
+
+/* Footer CTA */
+.grid-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+.learn-more-btn {
+  margin-top: 20px;
+  padding: 12px 24px; /* Slightly smaller than main CTAs */
+}
+
+/* =======================================
+   5. FINAL CTA Секция
+   ======================================= */
+.final-cta {
+  padding: 80px 0;
+}
+.final-cta-inner {
+  padding: 60px 40px;
+  border-radius: 20px;
+  /* Stronger Gradient Background */
+  background: linear-gradient(135deg, #102450 0%, #061023 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 16px 50px rgba(6, 12, 30, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.cta-title {
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.cta-lead {
+  font-size: 18px;
+  color: rgba(230, 240, 255, 0.75);
+}
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0;
+}
+.cta-btn {
+  padding: 14px 28px;
+  font-size: 17px;
+}
+
+/* =======================================
+   6. Адаптивность (Responsive Media Queries)
+   ======================================= */
+
+/* 🖼️ Планшеты (до 1100px) */
+@media (max-width: 1100px) {
+  .wrap { 
+    padding: 0 28px; 
+  }
+  .hero { 
+    min-height: 480px; 
+    padding-bottom: 80px; 
+  }
+  .hero-inner { 
+    gap: 30px; 
+  }
+  
+  /* HERO: Уменьшаем размеры карточки */
+  .hero-right { 
+    flex: 0 0 380px; 
+  }
+  .hero-card { 
+    width: 360px; 
+    height: 500px; 
+  }
+}
+
+/* 📲 Планшеты (до 900px) */
+@media (max-width: 900px) {
+  /* HERO: Вертикальный стек */
+  .hero { 
+    padding: 30px 0 60px 0; 
+  }
+  .hero-inner { 
+    flex-direction: column-reverse; 
+    align-items: center; 
+    gap: 40px; 
+    text-align: center; 
+  }
+  .hero-title { 
+    font-size: clamp(30px, 9vw, 52px); 
+    margin-top: 0;
+  }
+  .hero-ctas { 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-bottom: 20px;
+  }
+  .hero-right { 
+    width: 100%; 
+    flex: 0 0 auto;
+  }
+  .hero-card { 
+    width: min(90%, 450px); 
+    height: 300px;
+    transform: translateY(0); /* Отменяем hover эффект для touch-устройств */
+    box-shadow: 0 28px 70px rgba(6,12,30,0.6);
+  }
+  .hero-decor { 
+    display: none; 
+  }
+
+  /* FEATURES: 2 колонки (Уже было на 1000px, но повторяю для каскада) */
+  .features-cards {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+  }
+  
+  /* TESTIMONIALS: 2 колонки */
+  .testimonial-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* FINAL CTA: Вертикальный стек */
+  .final-cta {
+    padding: 50px 0;
+  }
+  .final-cta-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 25px;
+  }
+  .cta-title {
+    font-size: clamp(26px, 5vw, 34px);
+  }
+  .cta-buttons {
+    margin-top: 20px;
+  }
+}
+
+/* 📱 Мобильные устройства (до 600px) */
+@media (max-width: 600px) {
+  .wrap { 
+    padding:20px; 
+  }
+  .nav-link{
+    display: none;
+  }
+  .features-grid, .testimonials, .final-cta {
+    padding: 40px 0;
+  }
+  .grid-header {
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  
+  /* FEATURES: 1 колонка */
+  .features-cards {
+    grid-template-columns: 1fr; 
+    gap: 15px;
+  }
+  .card-heading {
+    font-size: 18px;
+  }
+  .card-text {
+    font-size: 14px;
+  }
+
+  /* TESTIMONIALS: 1 колонка */
+  .testimonial-cards {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+  .quote {
+    font-size: 15px;
+  }
+  
+  /* FINAL CTA: Кнопки вертикально */
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+}

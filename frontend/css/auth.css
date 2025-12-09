@@ -1,0 +1,136 @@
+/* ---------- AUTHENTICATION CORE STYLES ---------- */
+
+/* Стилизация body для центрирования и использования фонового градиента из home.css */
+.auth-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Градиент из home.css уже должен применяться через class="auth-body" */
+}
+
+.auth-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Brand - Reusing styles from home.css */
+.auth-brand {
+    margin-bottom: 25px;
+}
+
+/* Auth Card - Glassmorphism look */
+.auth-card {
+  width: 100%;
+  max-width: 420px; /* Добавляем max-width сюда, чтобы контролировать размер карточки */
+  overflow: hidden; 
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 28px 70px rgba(6, 12, 30, 0.6);
+  /* Удаляем padding отсюда */
+}
+
+/* Title and Subtitle */
+.auth-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.auth-subtitle {
+  font-size: 16px;
+  color: rgba(230, 240, 255, 0.75);
+  margin-bottom: 25px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(230, 240, 255, 0.9);
+  margin-bottom: 8px;
+}
+.auth-form input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #eaf0ff;
+  font-size: 16px;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.auth-form input:focus {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+.auth-form input::placeholder {
+  color: rgba(205, 217, 255, 0.4);
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.auth-footer-link {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 15px;
+  color: rgba(230, 240, 255, 0.7);
+}
+.auth-footer-link a {
+  color: #8bb6ff; /* Accent color */
+  text-decoration: none;
+  font-weight: 600;
+}
+.auth-footer-link a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- SLIDER MECHANISM ---------- */
+
+/* Контейнер, который будет скользить (включает обе формы) */
+.form-slider {
+  display: flex;
+  width: 200%; 
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+/* Каждая страница (форма) занимает 50% ширины .form-slider */
+.auth-page {
+  background-color: #102450;
+  width: 50%; /* Каждая форма занимает ровно половину от 200% ширины, т.е. 100% видимого контейнера */
+  flex-shrink: 0;
+  /* Добавляем padding сюда, чтобы он был внутри каждой страницы, а не на form-slider */
+  padding: 40px; 
+}
+
+/* 1. Состояние по умолчанию: LOGIN MODE */
+/* form-slider находится в начальной позиции (0%) */
+.auth-wrapper.login-mode .form-slider {
+  transform: translateX(0%);
+}
+
+/* 2. Состояние: REGISTER MODE */
+/* form-slider сдвигается на 50% влево, показывая вторую форму */
+.auth-wrapper.register-mode .form-slider {
+  transform: translateX(-50%);
+}
+
+html {
+  scroll-behavior: smooth;
+}

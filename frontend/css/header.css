@@ -1,0 +1,72 @@
+/* Общие стили */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; color: #eaf0ff; background: radial-gradient(1200px 600px at 10% 10%, rgba(45,24,80,0.12), transparent 8%), linear-gradient(135deg, #061226 0%, #0f1b33 30%, #162d68 100%); min-height: 100vh; line-height:1.3;}
+.wrap { max-width:1200px; margin:0 auto; padding:0 40px; width:100%; }
+
+.site-header {
+  display:flex; justify-content:space-between; align-items:center; padding:28px 0; position: relative; z-index: 40;
+}
+
+.brand { display:flex; align-items:center; gap:12px; }
+.logo-mark { width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:20px; background: linear-gradient(135deg,#7c63ff 0%, #3b82f6 100%); color: #fff; box-shadow: 0 6px 18px rgba(59,82,150,0.22), inset 0 -6px 18px rgba(255,255,255,0.03);}
+.brand-name { font-weight:700; font-size:18px; color:#eaf0ff; letter-spacing:0.2px; }
+
+.nav-links { display:flex; gap:28px; align-items:center; }
+.nav-link { color: rgba(205,217,255,0.7); text-decoration:none; font-size:15px; transition: color .18s ease;}
+.nav-link:hover { color: #fff; }
+
+.auth-buttons { display:flex; gap:12px; align-items:center; }
+.auth-link { color: rgba(230,240,255,0.85); text-decoration:none; margin-right:6px; font-weight:500; }
+.auth-btn.register { padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:700; background: linear-gradient(135deg,#5f56ff,#3b82f6); color:#fff; box-shadow: 0 8px 30px rgba(15,23,60,0.45); }
+
+/* User menu */
+.user-menu { position: relative; display: inline-block; cursor:pointer; }
+.user-name-btn {
+  background: linear-gradient(135deg,#4f47ff,#2f6bf0);
+  font-weight: 700;
+  font-size: 17px;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI";
+  color:#fff;
+  padding:13px 15px;
+  border: none;
+  border-radius:12px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.user-name-btn:hover { transform: translateY(-2px); box-shadow:0 10px 36px rgba(15,23,60,0.5); }
+
+/* Dropdown menu */
+.dropdown-menu {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI";
+  margin-top: 30px;
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(65, 42, 102, 0.12), transparent 8%), linear-gradient(135deg, #0d2753 0%, #122346 30%, #162d68 100%);
+  border-radius: 15px;
+  padding: 30px;
+  min-width: 300px;
+  color: linear-gradient(90deg,#caa6ff 0%, #8bb6ff 100%);
+  font-size: 15px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+  z-index: 9999;
+  transition: all .3 linear;
+}
+.dropdown-menu.show { display: block; opacity:1; transform: translateY(0);  transition: all .3 linear; background: linear-gradient(135deg,#7c63ff 0%, #3b82f6 100%); margin-top: 20px;}
+.dropdown-menu div { margin-bottom: 8px; }
+.dropdown-menu hr { border:0; border-top:1px solid rgba(255,255,255,0.2); margin:8px 0; }
+.dropdown-menu button {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI";
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:8px;
+  background: linear-gradient(135deg,#634dcf 0%, #3b82f6 100%);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:4px;
+  transition: transform .15s ease;
+}
+.dropdown-menu button:hover { transform: translateY(-2px); opacity:0.9; }
+.dropdown-menu button.delete-btn { background:linear-gradient(90deg,#8f0e0e 0%, #94354d 100%) }

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulix | Home</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home.css" />
+
+  <!-- JS -->
+  <script src="../js/header.js"></script>
+  <script src="../js/protect.js"></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <div class="brand">
+      <div class="logo-mark">P</div>
+      <div class="brand-name">Pulix</div>
+    </div>
+
+    <nav class="nav-links" role="navigation" aria-label="Main">
+      <a href="./dashboard.html" class="nav-link">Home</a>
+      <a href="./about-us.html" class="nav-link">About Us</a>
+      <a href="./documentation.html" class="nav-link">Documentation</a>
+    </nav>
+
+    <div class="auth-buttons">
+      <!-- Кнопки Login/Register будут скрыты, если пользователь вошёл -->
+      <a class="auth-link" href="./auth.html?mode=login" id="login-btn">Login</a>
+      <a class="auth-btn register" href="./auth.html?mode=register" id="register-btn">Register</a>
+
+      <!-- Меню пользователя -->
+      <div class="auth-buttons">
+  <!-- Исходные кнопки (будут скрыты JS) -->
+  <a class="auth-link" href="./auth.html?mode=login">Login</a>
+  <a class="auth-btn register" href="./auth.html?mode=register">Register</a>
+
+  <!-- Меню пользователя (по умолчанию скрыто) -->
+  <div class="user-menu" style="display:none; position: relative;">
+    <button class="user-name-btn"></button>
+    <div class="dropdown-menu" style="display:none; position:absolute; top:100%; right:0; transition: all .3s linear; border-radius:5px; padding:10px; width:200px; z-index:100;">
+      <div><strong>Email:</strong> <span class="user-email"></span></div>
+      <div><strong>Plan:</strong> <span class="user-plan"></span></div>
+      <hr/>
+      <button class="logout-btn" style="margin-top:5px; width:100%;">Logout</button>
+      <button class="delete-btn" style="margin-top:5px; width:100%; ">Delete Account</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-left">
+          <div class="kicker">AI TOOLS · CREATIVE STUDIO</div>
+          <h1 class="hero-title">
+            Create stunning<br/>visuals with one<br/>click
+          </h1>
+
+          <p class="hero-lead">
+            Generate images, smart hashtags and ready-to-use assets — fast and effortless.
+            Select a style, press generate and get pro results.
+          </p>
+
+          <div class="hero-ctas">
+            <a id="gen-image" class="btn primary" href="./generate-image.html">Generate Image</a>
+            <a id="gen-hashtags" class="btn ghost" href="./generate-hashtags.html">Generate Hashtags</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <div class="pill">Preview</div>
+              <img src="../img/hero.png" alt="AI preview" class="hero-img" />
+              <div class="card-overlay">
+                <div class="preview-meta">Example · Style · Vaporwave</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <svg class="hero-decor" viewBox="0 0 800 400" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="#6c63ff" stop-opacity="0.16"/>
+            <stop offset="1" stop-color="#3b82f6" stop-opacity="0.06"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,120 C120,200 260,40 420,120 C600,220 740,40 800,120 L800 400 L0 400 Z" fill="url(#g1)"/>
+      </svg>
+    </section>
+
+    <!-- Features grid -->
+    <section class="features-grid">
+      <div class="wrap">
+        <div class="grid-header">
+          <div class="kicker">UNLEASH YOUR IDEAS</div>
+          <h2 class="grid-title">The Creative Power of Pulix</h2>
+          <p class="grid-lead">
+            From concept art to marketing materials, Pulix simplifies the creation process across every medium.
+          </p>
+        </div>
+
+        <div class="features-cards">
+          <div class="feature-card">
+            <div class="card-icon">🎨</div>
+            <h3 class="card-heading">Visual Concept Art</h3>
+            <p class="card-text">
+              Generate stunning environments, characters, and assets for games or films in seconds.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon">📱</div>
+            <h3 class="card-heading">Social Media & Marketing</h3>
+            <p class="card-text">
+              Design captivating posts, banners, and smart, optimized hashtags for maximum reach.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon">🛒</div>
+            <h3 class="card-heading">E-commerce Assets</h3>
+            <p class="card-text">
+              Create professional product photos, mockups, and advertisements without a studio.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon">🌐</div>
+            <h3 class="card-heading">Web & UI/UX Design</h3>
+            <p class="card-text">
+              Produce unique backgrounds, textures, and interface elements for your projects.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-footer">
+          <a class="btn ghost learn-more-btn" href="./documentation.html">Read the Full Documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="wrap">
+        <div class="grid-header">
+          <div class="kicker">TRUSTED BY CREATIVES</div>
+          <h2 class="grid-title">What Our Community Says</h2>
+          <p class="grid-lead">
+            See how Pulix helps designers, marketers, and developers bring their visions to life effortlessly.
+          </p>
+        </div>
+
+        <div class="testimonial-cards">
+          <div class="testimonial-card">
+            <blockquote class="quote">
+              "Pulix has entirely changed my workflow. Generating high-quality concept art used to take hours; now it's done in one click. Absolutely essential tool!"
+            </blockquote>
+            <div class="author">
+              <img src="../img/avatar-1.jpg" alt="User Avatar" class="avatar" />
+              <div>
+                <div class="author-name">Alex M.</div>
+                <div class="author-role">Concept Artist</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <blockquote class="quote">
+              "The hashtag generation alone is worth it. It gives me optimized tags that consistently double my post reach on social media. Highly recommend this AI studio."
+            </blockquote>
+            <div class="author">
+              <img src="../img/avatar-2.jpg" alt="User Avatar" class="avatar" />
+              <div>
+                <div class="author-name">Sarah K.</div>
+                <div class="author-role">Marketing Specialist</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <blockquote class="quote">
+              "I used Pulix to create all the product visuals for my new e-commerce store. Professional results, zero budget spent on a photography studio. A game-changer."
+            </blockquote>
+            <div class="author">
+              <img src="../img/avatar-3.jpg" alt="User Avatar" class="avatar" />
+              <div>
+                <div class="author-name">David L.</div>
+                <div class="author-role">E-commerce Founder</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap final-cta-inner">
+        <div class="cta-text">
+          <h2 class="cta-title">Ready to unleash your creativity?</h2>
+          <p class="cta-lead">Start generating stunning visuals and smart hashtags today. No credit card required to sign up.</p>
+        </div>
+        <div class="cta-buttons">
+          <a class="btn primary cta-btn" href="#">Get Started Free</a>
+          <a class="btn ghost cta-btn" href="./pricing.html">View Pricing Plans</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-info">
+        <div class="brand footer-brand">
+          <div class="logo-mark">P</div>
+          <div class="brand-name">Pulix</div>
+        </div>
+        <p class="footer-description">
+          The all-in-one AI studio for visual creation and content optimization.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4 class="col-heading">Product</h4>
+          <a href="./generate-image.html" class="footer-link">Image Generator</a>
+          <a href="./generate-hashtags.html" class="footer-link">Hashtag Tool</a>
+          <a href="./pricing.html" class="footer-link">Pricing</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="col-heading">Resources</h4>
+          <a href="./documentation.html" class="footer-link">Documentation</a>
+          <a href="./contact.html" class="footer-link">Contact</a>
+          <a href="./legal.html" class="footer-link">Terms & Privacy</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="col-heading">Company</h4>
+          <a href="./about-us.html" class="footer-link">About Us</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copy wrap">
+      <p>&copy; 2025 Pulix AI Studio. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

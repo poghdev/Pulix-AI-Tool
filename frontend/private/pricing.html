@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulix | Pricing</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/pricing.css" />
+
+   <!-- JS -->
+  <script src="../js/header.js"></script>
+  <script src="../js/protect.js"></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="pricing-page-body">
+  <header class="site-header wrap">
+    <div class="brand">
+      <div class="logo-mark">P</div>
+      <div class="brand-name">Pulix</div>
+    </div>
+
+    <nav class="nav-links" role="navigation" aria-label="Main">
+      <a href="./dashboard.html" class="nav-link">Home</a>
+      <a href="./about-us.html" class="nav-link">About Us</a>
+      <a href="./documentation.html" class="nav-link">Documentation</a>
+    </nav>
+
+    <div class="auth-buttons">
+      <!-- Кнопки Login/Register будут скрыты, если пользователь вошёл -->
+      <a class="auth-link" href="./auth.html?mode=login" id="login-btn">Login</a>
+      <a class="auth-btn register" href="./auth.html?mode=register" id="register-btn">Register</a>
+
+      <!-- Меню пользователя -->
+      <div class="auth-buttons">
+  <!-- Исходные кнопки (будут скрыты JS) -->
+  <a class="auth-link" href="./auth.html?mode=login">Login</a>
+  <a class="auth-btn register" href="./auth.html?mode=register">Register</a>
+
+  <!-- Меню пользователя (по умолчанию скрыто) -->
+  <div class="user-menu" style="display:none; position: relative;">
+    <button class="user-name-btn"></button>
+    <div class="dropdown-menu" style="display:none; position:absolute; top:100%; right:0; transition: all .3s linear; border-radius:5px; padding:10px; width:200px; z-index:100;">
+      <div><strong>Email:</strong> <span class="user-email"></span></div>
+      <div><strong>Plan:</strong> <span class="user-plan"></span></div>
+      <hr/>
+      <button class="logout-btn" style="margin-top:5px; width:100%;">Logout</button>
+      <button class="delete-btn" style="margin-top:5px; width:100%; ">Delete Account</button>
+    </div>
+  </div>
+</div>
+    </div>
+  </header>
+  <main>
+    <section class="pricing-intro">
+        <div class="wrap pricing-intro-inner">
+            <div class="kicker animate-in animate-delay-1">SIMPLE & FLEXIBLE PLANS</div>
+            <h1 class="pricing-title animate-in animate-delay-2">
+                Unlock Unlimited Creative Power
+            </h1>
+            <p class="pricing-lead animate-in animate-delay-3">
+                Choose a plan that fits your creative demands, from free trials to professional unlimited access.
+            </p>
+            
+    </section>
+
+    <section class="pricing-cards">
+        <div class="wrap cards-inner">
+            
+            <div class="pricing-card">
+                <h2 class="plan-name">Starter</h2>
+                <p class="plan-tagline">Perfect for hobbyists and trying out Pulix.</p>
+                <div class="plan-price">
+                    <span class="price-currency">$</span>0
+                    <span class="price-term">/ forever</span>
+                </div>
+                
+                <a href="./auth.html?mode=register" class="btn primary plan-btn">Start Generating</a>
+                
+                <ul class="features-list">
+                    <li class="feature-item">50 AI Generations / month</li>
+                    <li class="feature-item">Basic Hashtag Agent</li>
+                    <li class="feature-item">Standard Resolution (SD)</li>
+                </ul>
+            </div>
+            
+            <div class="pricing-card featured-card">
+                <div class="pill featured-pill">MOST POPULAR</div>
+                <h2 class="plan-name">Creator Pro</h2>
+                <p class="plan-tagline">Unleash unlimited power for serious creators.</p>
+                <div class="plan-price">
+                    <span class="price-currency">$</span>4.99
+                    <span class="price-term">/ month</span>
+                </div>
+                
+                <a href="./auth.html?mode=register" class="btn primary plan-btn">Get Started</a>
+                
+                <ul class="features-list">
+                    <li class="feature-item">300 AI Generations</li>
+                    <li class="feature-item">Advanced Hashtag & Caption Agent</li>
+                    <li class="feature-item">High Resolution (HD)</li>
+                </ul>
+            </div>
+            
+            <div class="pricing-card">
+                <h2 class="plan-name">Agency</h2>
+                <p class="plan-tagline">For teams and high-volume asset production.</p>
+                <div class="plan-price">
+                    <span class="price-currency">$</span>19.99
+                    <span class="price-term">/ year</span>
+                </div>
+                
+                <a href="#" class="btn primary plan-btn">Contact Sales</a>
+                
+                <ul class="features-list">
+                    <li class="feature-item">All Pro Features</li>
+                    <li class="feature-item">Unlimited AI Generations</li>
+                    <li class="feature-item">Professional Hashtag Agent</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="wrap final-cta-inner">
+            <div class="cta-text">
+                <h2 class="cta-title">Need a Custom Solution?</h2>
+                <p class="cta-lead">If you have specific enterprise needs or require custom model development, contact our sales team.</p>
+            </div>
+            <div class="cta-buttons">
+                <a class="btn ghost cta-btn" href="#">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+  </main>
+
+      <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-info">
+        <div class="brand footer-brand">
+          <div class="logo-mark">P</div>
+          <div class="brand-name">Pulix</div>
+        </div>
+        <p class="footer-description">
+          The all-in-one AI studio for visual creation and content optimization.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4 class="col-heading">Product</h4>
+          <a href="./generate-image.html" class="footer-link">Image Generator</a>
+          <a href="./generate-hashtags.html" class="footer-link">Hashtag Tool</a>
+          <a href="./pricing.html" class="footer-link">Pricing</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="col-heading">Resources</h4>
+          <a href="./documentation.html" class="footer-link">Documentation</a>
+          <a href="./contact.html" class="footer-link">Contact</a>
+          <a href="./legal.html" class="footer-link">Terms & Privacy</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="col-heading">Company</h4>
+          <a href="./about-us.html" class="footer-link">About Us</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copy wrap">
+      <p>&copy; 2025 Pulix AI Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  </body>
+</html>

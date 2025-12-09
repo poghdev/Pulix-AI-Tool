@@ -1,0 +1,9 @@
+uvicorn
+fastapi
+motor
+pydantic
+dotenv
+passlib
+PyJWT
+python-jose
+httpx

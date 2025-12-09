@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulix | Generate Hashtags</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/generate.css" /> 
+</head>
+<body>
+  <header class="site-header wrap">
+    <div class="brand">
+      <div class="logo-mark">P</div>
+      <div class="brand-name">Pulix</div>
+    </div>
+
+    <nav class="nav-links" role="navigation" aria-label="Main">
+      <a href="./home.html" class="nav-link">Home</a>
+      <a href="./about-us.html" class="nav-link">About Us</a>
+      <a href="./documentation.html" class="nav-link">Documentation</a>
+    </nav>
+
+    <div class="auth-buttons">
+      <a class="auth-link" href="./auth.html?mode=login">Login</a>
+      <a class="auth-btn register" href="./auth.html?mode=register">Register</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="generate-hero">
+        <div class="wrap generate-hero-inner">
+            <h1 class="generate-title animate-in animate-delay-1">AI Hashtag & Caption Generator</h1>
+            <p class="generate-lead animate-in animate-delay-2">
+                Boost your social media reach with smart hashtags and compelling captions.
+            </p>
+
+            <div class="generate-interface animate-in animate-delay-3">
+                <div class="prompt-section">
+                    <label for="content-description" class="form-label">Add your image:</label>
+                    <input type="file" id="content-description" class="prompt-input">
+                    <button class="btn primary generate-btn">Generate Hashtags & Captions</button>
+                </div>
+
+                <div class="options-section">
+                    <div class="form-group">
+                        <label for="target-platform" class="form-label">Target Platform:</label>
+                        <select id="target-platform" class="select-input">
+                            <option value="instagram">Instagram</option>
+                            <option value="twitter">X (Twitter)</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="facebook">Facebook</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="caption-tone" class="form-label">Caption Tone (optional):</label>
+                        <select id="caption-tone" class="select-input">
+                            <option value="none">None (Standard)</option>
+                            <option value="promotional">Promotional</option>
+                            <option value="storytelling">Storytelling</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="hashtag-count" class="form-label">Number of Hashtags:</label>
+                        <input type="number" id="hashtag-count" class="text-input" value="10" min="5" max="20">
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-preview animate-in animate-delay-4">
+                <h3 class="preview-heading">Your Generated Results:</h3>
+                <div class="hashtags-output-box">
+                    <p id="generated-caption" class="generated-caption-text">Your generated caption will appear here.</p>
+                    <textarea id="generated-hashtags" class="generated-hashtags-textarea" readonly placeholder="#Your #Generated #Hashtags #Will #Appear #Here"></textarea>
+                </div>
+                <div class="result-actions">
+                    <button class="btn ghost copy-caption-btn">Copy Caption</button>
+                    <button class="btn ghost copy-hashtags-btn">Copy Hashtags</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+  </main>
+</body>
+</html>

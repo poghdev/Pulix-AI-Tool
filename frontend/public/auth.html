@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulix | Authentication</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/auth.css" />
+</head>
+
+<body class="auth-body">
+  <div class="auth-wrapper login-mode">
+    <div class="brand auth-brand">
+      <div class="logo-mark">P</div>
+      <div class="brand-name">Pulix</div>
+    </div>
+
+    <div class="auth-card">
+      <div class="form-slider">
+
+        <div class="auth-page login-page">
+          <h1 class="auth-title">Welcome Back</h1>
+          <p class="auth-subtitle">Sign in to continue to your Pulix Studio.</p>
+
+          <form class="auth-form">
+            <div class="form-group">
+              <label for="login-email">Email Address</label>
+              <input type="email" id="login-email" placeholder="email@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" placeholder="••••••••" required />
+            </div>
+
+            <button type="submit" class="btn primary auth-submit-btn">Login to Account</button>
+            <p class="form-message" style="display:none; font-size:14px; margin-top:10px;"></p>
+
+          </form>
+
+          <div class="auth-footer-link">
+            Don't have an account? <a href="#" id="show-register">Register Here</a>
+          </div>
+        </div>
+
+        <div class="auth-page register-page">
+          <h1 class="auth-title">Create Your Free Account</h1>
+          <p class="auth-subtitle">Start generating stunning AI visuals in seconds.</p>
+
+          <form class="auth-form">
+            <div class="form-group">
+              <label for="reg-name">First Name</label>
+              <input type="text" id="reg-name" placeholder="John" required />
+            </div>
+
+            <div class="form-group">
+              <label for="reg-name">Last Name</label>
+              <input type="text" id="reg-lastname" placeholder="Doe" required />
+            </div>
+
+            <div class="form-group">
+              <label for="reg-email">Email Address</label>
+              <input type="email" id="reg-email" placeholder="email@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="reg-password">Create Password</label>
+              <input type="password" id="reg-password" placeholder="At least 8 characters" required />
+            </div>
+
+            <button type="submit" class="btn primary auth-submit-btn">Register for Pulix</button>
+            <p class="form-message" style="display:none; font-size:14px; margin-top:10px;"></p>
+          </form>
+
+          <div class="auth-footer-link">
+            Already have an account? <a href="#" id="show-login">Login Here</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="../js/auth.js"></script>
+
+</body>
+
+</html>

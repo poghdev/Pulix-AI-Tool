@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulix | Generate Image</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/generate.css" />
+  
+  <script src="../js/header.js"></script>
+  <script src="../js/protect.js"></script>
+  <script src="../js/generate.js" defer></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <div class="brand">
+      <div class="logo-mark">P</div>
+      <div class="brand-name">Pulix</div>
+    </div>
+
+    <nav class="nav-links" role="navigation" aria-label="Main">
+      <a href="./dashboard.html" class="nav-link">Home</a>
+      <a href="./about-us.html" class="nav-link">About Us</a>
+      <a href="./documentation.html" class="nav-link">Documentation</a>
+    </nav>
+
+    <div class="auth-buttons">
+      <!-- Исходные кнопки (будут скрыты JS) -->
+      <a class="auth-link" href="./auth.html?mode=login">Login</a>
+      <a class="auth-btn register" href="./auth.html?mode=register">Register</a>
+
+      <!-- Меню пользователя -->
+      <div class="user-menu" style="display:none; position: relative;">
+        <button class="user-name-btn"></button>
+        <div class="dropdown-menu" style="display:none; position:absolute; top:100%; right:0; background: #fff; border: 1px solid #eee; border-radius:5px; padding:10px; width:200px; z-index:100; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <div><strong>Email:</strong> <span class="user-email"></span></div>
+          <div><strong>Plan:</strong> <span class="user-plan"></span></div>
+          <hr style="margin: 8px 0;"/>
+          <button class="logout-btn" style="margin-top:5px; width:100%;">Logout</button>
+          <button class="delete-btn" style="margin-top:5px; width:100%; ">Delete Account</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="generate-hero">
+        <div class="wrap generate-hero-inner">
+            <h1 class="generate-title animate-in animate-delay-1">AI Image Generator</h1>
+            <p class="generate-lead animate-in animate-delay-2">
+                Turn your words into stunning visuals in seconds. Describe anything, choose a style, and let AI do the rest.
+            </p>
+
+            <div class="generate-interface animate-in animate-delay-3">
+                <div class="prompt-section">
+                    <label for="image-prompt" class="form-label">Describe your image:</label>
+                    <textarea id="image-prompt" class="prompt-input" placeholder="A futuristic city at sunset, highly detailed, cyberpunk style, neon lights..."></textarea>
+                    <button id="generate-btn" class="btn primary">Generate Image</button>
+                </div>
+
+                <div class="options-section">
+                    <div class="form-group">
+                        <label for="image-style" class="form-label">Image Style:</label>
+                        <select id="image-style" class="select-input">
+                            <option value="Standard">None (Standard)</option>
+                            <option value="photorealistic">Photorealistic</option>
+                            <option value="cyberpunk">Cyberpunk</option>
+                            <option value="watercolor">Watercolor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="aspect-ratio" class="form-label">Aspect Ratio:</label>
+                        <select id="aspect-ratio" class="select-input">
+                            <option value="1:1">Square (1:1)</option>
+                            <option value="16:9">Landscape (16:9)</option>
+                            <option value="9:16">Portrait (9:16)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="negative-prompt" class="form-label">Exclude from image (optional):</label>
+                        <input type="text" id="negative-prompt" class="text-input" placeholder="Blurry, ugly, text, watermark...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-preview animate-in animate-delay-4">
+                <h3 class="preview-heading">Your Generated Image:</h3>
+                <div class="image-placeholder">
+                    <img src="../img/placeholder-image.png" alt="Generated Image Preview" id="generated-image" />
+                    <p class="no-image-text">Your image will appear here</p>
+                </div>
+                <div class="result-actions">
+                    <button id="download-btn" class="btn ghost">Download</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+  </main>
+</body>
+</html>

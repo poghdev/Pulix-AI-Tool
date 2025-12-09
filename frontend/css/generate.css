@@ -1,0 +1,256 @@
+
+
+/*
+ * Файл: generate.css
+ * Используется для стилизации generate-image.html и generate-hashtags.html
+ */
+
+/* ---------- GENERATE INTRO ---------- */
+
+.generate-hero {
+    padding: 60px 0 100px;
+    text-align: center;
+}
+.generate-title {
+    font-size: clamp(38px, 6vw, 60px);
+    line-height: 1.1;
+    font-weight: 900;
+    margin: 8px 0 20px;
+    background: linear-gradient(90deg,#caa6ff 0%, #8bb6ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+.generate-lead {
+    font-size: 20px;
+    color: rgba(230,240,255,0.8);
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+/* ---------- ОСНОВНОЙ ИНТЕРФЕЙС ГЕНЕРАЦИИ (РАЗМЕРЫ И FLEX) ---------- */
+
+.generate-interface {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    /* Glassmorphism/Shadow style */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 15px 40px rgba(6, 12, 30, 0.4);
+    border-radius: 18px;
+    padding: 30px;
+    text-align: left;
+}
+
+.prompt-section {
+    flex: 2; /* 2/3 ширины */
+    display: flex;
+    flex-direction: column;
+}
+.options-section {
+    flex: 1; /* 1/3 ширины */
+}
+
+/* ---------- ЭЛЕМЕНТЫ ФОРМЫ (ЦВЕТА И СТИЛИ) ---------- */
+
+.form-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(230, 240, 255, 0.9);
+    margin-bottom: 8px;
+}
+.prompt-input, .select-input, .text-input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Чуть более заметная рамка */
+    background: rgba(255, 255, 255, 0.08); /* Чуть более заметный фон */
+    color: #eaf0ff;
+    font-size: 18px;
+    transition: border-color .2s ease, background-color .2s ease;
+    appearance: none; /* Убирает стандартный стиль select */
+}
+
+/* Высота Textarea (для Image Prompt) */
+.prompt-input {
+    min-height: 120px;
+    height: 90px; /* Фиксированная высота */
+    resize: none; /* Отключаем изменение размера пользователем */
+    margin-bottom: 20px;
+}
+
+.prompt-input:focus, .select-input:focus, .text-input:focus {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    outline: none;
+}
+.prompt-input::placeholder, .text-input::placeholder {
+    color: rgba(205, 217, 255, 0.5);
+}
+.select-input {
+    cursor: pointer;
+    /* Стиль стрелки для select (SVG) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23CDE5FF' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+.select-input option {
+    background-color: #0d1a33;
+    color: #eaf0ff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.generate-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+
+/* ---------- ПРЕВЬЮ РЕЗУЛЬТАТОВ ---------- */
+
+.results-preview {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Glassmorphism/Shadow style */
+    background-color: #0d1a33;
+    border: 2px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 15px 40px rgba(6, 12, 30, 0.4);
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+}
+.preview-heading {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+/* Image Generator Specific */
+.image-placeholder {
+    width: 100%;
+    max-width: 600px;
+    height: 350px; /* Фиксированная высота */
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    display: none;
+}
+.image-placeholder .no-image-text {
+    color: rgba(205, 217, 255, 0.5);
+    font-size: 18px;
+}
+
+/* Hashtag Generator Specific */
+.hashtags-output-box {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: left;
+}
+.generated-caption-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(230, 240, 255, 0.85);
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    min-height: 80px;
+    height: 80px; /* Фиксированная высота */
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+.generated-hashtags-textarea {
+    width: 100%;
+    min-height: 100px;
+    height: 100px; /* Фиксированная высота */
+    resize: none;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #eaf0ff;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.download-btn, .copy-caption-btn, .copy-hashtags-btn, .upscale-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+
+/* ---------- АДАПТИВНОСТЬ ---------- */
+
+@media (max-width: 900px) {
+    .generate-interface {
+        background-color: #102450;
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px;
+    }
+    .prompt-section, .options-section {
+        flex: none;
+        width: 100%;
+    }
+    .prompt-input {
+        min-height: 100px;
+        height: 100px;
+    }
+    .generate-btn {
+        margin-top: 20px;
+    }
+}
+@media (max-width: 500px) {
+    .generate-interface {
+        background-color: #102450;
+    }
+    .generate-hero {
+        padding: 40px 0 60px;
+    }
+    .generate-title {
+        font-size: 38px;
+    }
+    .generate-lead {
+        font-size: 18px;
+    }
+    .results-preview {
+        padding: 20px;
+    }
+    .image-placeholder {
+        height: 250px;
+    }
+    .result-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .download-btn, .copy-caption-btn, .copy-hashtags-btn, .upscale-btn {
+        width: 100%;
+    }
+}
